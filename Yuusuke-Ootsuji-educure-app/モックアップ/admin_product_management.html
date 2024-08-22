@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriConnect. 商品管理画面</title>
+    <link rel="stylesheet" href="css/admin_product_management.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="product_lineup.html">
+                <img src="images/logo.png" alt="AgriConnect. ロゴ" class="logo">
+            </a>
+            <a href="logout.html">ログアウト</a>
+        </header>
+        <a href="admin_dashboard.html" class="back-link">&lt; 戻る</a>
+        <main>
+			<p>商品検索（両方空白の場合は全件表示します）</p>
+            <form class="search-form">
+                <div class="form-group">
+                    <label for="userId">商品ID</label>
+                    <input type="text" id="userId" name="userId">
+                </div>
+                <div class="form-group">
+                    <label for="email">出品者ID</label>
+                    <input type="text" id="productId" name="productId">
+                </div>
+                <a href="admin_product_management.html" class="btn">検索</a>
+            </form>
+            <table class="product-table">
+                <thead>
+                    <tr>
+                        <th>商品ID</th>
+                        <th>商品名</th>
+                        <th>出品者ID</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="admin_product_detail.html">product123</a></td>
+                        <td>トマト</td>
+                        <td>user123</td>
+                    </tr>
+                    <tr>
+                        <td><a href="admin_product_detail.html">product456</a></td>
+                        <td>にんじん</td>
+                        <td>user456</td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </div>
+<body>
+
+</body>
+</html>

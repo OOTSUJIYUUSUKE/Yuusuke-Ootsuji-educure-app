@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriConnect. 注文詳細画面</title>
+    <link rel="stylesheet" href="css/admin_order_detail.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <a href="product_lineup.html">
+                <img src="images/logo.png" alt="AgriConnect. ロゴ" class="logo">
+            </a>
+            <a href="admin_order_management.html" class="back-link">&lt; 戻る</a>
+        </header>
+        <main>
+            <h1 class="title">注文情報</h1>
+            <form class="order-form">
+                <div class="form-group">
+                    <label for="userId">注文ID</label>
+                    <input type="text" value="order123" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="productId">商品ID</label>
+                    <input type="text" value="product123" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="productName">商品名</label>
+                    <input type="text" value="トマト" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="orderDate">注文日時</label>
+                    <input type="date" value="2024-09-01" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="shippingInfo">配送情報</label>
+                    <input type="text" value="出荷済" readonly>
+                </div>
+            </form>
+        </main>
+    </div>
+</body>
+
+</html>

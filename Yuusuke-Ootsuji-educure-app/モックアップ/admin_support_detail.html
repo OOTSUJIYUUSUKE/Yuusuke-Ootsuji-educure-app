@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriConnect. サポート詳細画面</title>
+    <link rel="stylesheet" href="css/admin_support_detail.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <a href="product_lineup.html">
+                <img src="images/logo.png" alt="AgriConnect. ロゴ" class="logo">
+            </a>
+            <a href="admin_support_response.html" class="back-link">&lt; 戻る</a>
+        </header>
+        <main>
+            <h1 class="title">サポート情報</h1>
+            <form class="support-form">
+                <div class="form-group">
+                    <label for="supportId">サポートID</label>
+                    <input type="text" value="support123" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="userId">ユーザーID</label>
+                    <input type="text" value="user123" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="supportDetail">問い合わせ内容詳細</label>
+                    <textarea id="supportDetail" rows="4" readonly>注文から１週間が経ちましたが、現在まだ商品が届きません。現在の状況を教えて下さい。</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="status">対応状況</label>
+                    <input type="text" value="対応中" readonly>
+                </div>
+            </form>
+        </main>
+    </div>
+</body>
+
+</html>

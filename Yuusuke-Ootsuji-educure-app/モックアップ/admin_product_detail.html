@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriConnect. 商品詳細画面</title>
+    <link rel="stylesheet" href="css/admin_product_detail.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <a href="product_lineup.html">
+                <img src="images/logo.png" alt="AgriConnect. ロゴ" class="logo">
+            </a>
+            <a href="admin_product_management.html" class="back-link">&lt; 戻る</a>
+        </header>
+        <main>
+            <h1 class="title">商品情報</h1>
+            <form class="product-form">
+                <div class="form-group">
+                    <label for="productId">商品ID</label>
+                    <input type="text" value="product123" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="productName">商品名</label>
+                    <input type="text" value="トマト" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="price">価格</label>
+                    <input type="text" value="¥1000" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="sellerId">出品者ID</label>
+                    <input type="text" value="user123" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="description">商品説明</label>
+                    <input type="tel" value="09012345678" readonly>
+                </div>
+                <a href="admin_product_delete_confirm.html" class="btn">商品を削除する</a>
+            </form>
+        </main>
+    </div>
+</body>
+
+</html>

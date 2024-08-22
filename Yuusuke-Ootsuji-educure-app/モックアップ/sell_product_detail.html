@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+	
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriConnect. 販売商品詳細画面</title>
+    <link rel="stylesheet" href="css/sell_product_detail.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="product_lineup.html">
+                <img src="images/logo.png" alt="AgriConnect. ロゴ" class="logo">
+            </a>
+            <form class="search-form">
+                <input type="text" placeholder="何をお探しですか" name="search">
+                <a href="search_result.html" class="btn">検索</a>
+            </form>
+            <div class="welcome-message">ようこそ、〇〇さん</div>
+        </header>
+        <a href="sell_history.html" class="back-link">&lt; 戻る</a>
+        <nav class="nav">
+            <ul>
+                <li><a href="mypage.html">マイページ</a></li>
+                <li><a href="sell.html">出品</a></li>
+                <li><a href="contact.html">お問い合わせ</a></li>
+                <li><a href="logout.html">ログアウト</a></li>
+            </ul>
+        </nav>
+        <main class="product-detail">
+            <div class="product-images">
+                <div class="thumbnail-wrapper">
+					<img src="images/tomato.jpg" alt="トマト1" class="thumbnail" onclick="showImage(this)">
+                </div>
+                <div class="thumbnail-wrapper">
+					<img src="images/tomato2.jpg" alt="トマト2" class="thumbnail" onclick="showImage(this)">
+                </div>
+                <div class="thumbnail-wrapper">
+					<img src="images/tomato3.jpg" alt="トマト3" class="thumbnail" onclick="showImage(this)">
+                </div>
+            </div>
+            <div class="product-main-image">
+                <img src="images/tomato.jpg" alt="トマト拡大" id="mainImage">
+            </div>
+            <div class="product-info">
+                <h1 class="product-name">新鮮！朝採れトマト！</h1>
+                <p class="price">¥1,000</p>
+                <p class="description">新鮮なトマトです！栄養満点で美味しいです！<br>是非ご賞味ください！</p>
+            </div>
+        </main>
+    </div>
+    <script src="js/image-handler.js"></script>
+</body>
+</html>

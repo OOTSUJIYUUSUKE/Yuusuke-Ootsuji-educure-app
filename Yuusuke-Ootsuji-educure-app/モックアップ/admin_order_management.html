@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriConnect. 注文管理画面</title>
+    <link rel="stylesheet" href="css/admin_order_management.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="product_lineup.html">
+                <img src="images/logo.png" alt="AgriConnect. ロゴ" class="logo">
+            </a>
+            <a href="logout.html">ログアウト</a>
+        </header>
+        <a href="admin_dashboard.html" class="back-link">&lt; 戻る</a>
+        <main>
+			<p>注文検索（空白の場合は全件表示します）</p>
+            <form class="search-form">
+                <div class="form-group">
+                    <label for="orderId">注文ID</label>
+                    <input type="text" id="orderId" name="orderId">
+                </div>
+                <a href="admin_order_management.html" class="btn">検索</a>
+            </form>
+            <table class="order-table">
+                <thead>
+                    <tr>
+                        <th>注文ID</th>
+                        <th>商品ID</th>
+                        <th>商品名</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="admin_order_detail.html">order123</a></td>
+                        <td>product123</td>
+                        <td>トマト</td>
+                    </tr>
+                    <tr>
+                        <td><a href="admin_order_detail.html">order456</a></td>
+                        <td>product456</td>
+                        <td>にんじん</td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </div>
+<body>
+
+</body>
+</html>

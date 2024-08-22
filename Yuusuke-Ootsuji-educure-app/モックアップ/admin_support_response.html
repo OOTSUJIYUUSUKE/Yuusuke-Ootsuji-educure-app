@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriConnect. サポート対応画面</title>
+    <link rel="stylesheet" href="css/admin_support_response.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="product_lineup.html">
+                <img src="images/logo.png" alt="AgriConnect. ロゴ" class="logo">
+            </a>
+            <a href="logout.html">ログアウト</a>
+        </header>
+        <a href="admin_dashboard.html" class="back-link">&lt; 戻る</a>
+        <main>
+			<p>サポート検索</p>
+            <form class="search-form">
+                <div class="form-group">
+                    <label for="supportId">サポートID</label>
+                    <input type="text" id="supportId" name="supportId">
+                </div>
+                <div class="form-group">
+                    <label for="status">対応状況</label>
+                    <select id="options" name="options">
+                    <option value="notSupported">未対応</option>
+                    <option value="supporting">対応中</option>
+                    <option value="supported">対応済</option>
+                    </select>
+                </div>
+                <a href="admin_support_management.html" class="btn">検索</a>
+            </form>
+            <table class="support-table">
+                <thead>
+                    <tr>
+                        <th>サポートID</th>
+                        <th>ユーザーID</th>
+                        <th>対応状況</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="admin_support_detail.html">support123</a></td>
+                        <td>user123</td>
+                        <td>対応中</td>
+                    </tr>
+                    <tr>
+                        <td><a href="admin_support_detail.html">support456</a></td>
+                        <td>user456</td>
+                        <td>未対応</td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </div>
+<body>
+
+</body>
+</html>

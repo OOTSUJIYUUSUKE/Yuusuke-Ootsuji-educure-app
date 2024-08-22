@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriConnect. ユーザー管理画面</title>
+    <link rel="stylesheet" href="css/admin_user_management.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="product_lineup.html">
+                <img src="images/logo.png" alt="AgriConnect. ロゴ" class="logo">
+            </a>
+            <a href="logout.html">ログアウト</a>
+        </header>
+        <a href="admin_dashboard.html" class="back-link">&lt; 戻る</a>
+        <main>
+			<p>ユーザー検索（両方空白の場合は全件表示します）</p>
+            <form class="search-form">
+                <div class="form-group">
+                    <label for="userId">ユーザーID</label>
+                    <input type="text" id="userId" name="userId">
+                </div>
+                <div class="form-group">
+                    <label for="email">メールアドレス</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <a href="admin_user_management.html" class="btn">検索</a>
+            </form>
+            <table class="user-table">
+                <thead>
+                    <tr>
+                        <th>ユーザーID</th>
+                        <th>ユーザー名</th>
+                        <th>メールアドレス</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="admin_user_detail.html">user123</a></td>
+                        <td>山田太郎</td>
+                        <td>taro@example.com</td>
+                    </tr>
+                    <tr>
+                        <td><a href="admin_user_detail.html">user456</a></td>
+                        <td>鈴木花子</td>
+                        <td>hanako@example.com</td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </div>
+<body>
+
+</body>
+</html>

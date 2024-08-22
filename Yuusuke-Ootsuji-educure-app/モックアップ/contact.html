@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+	
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriConnect. お問い合わせフォーム画面</title>
+    <link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="product_lineup.html">
+                <img src="images/logo.png" alt="AgriConnect. ロゴ" class="logo">
+            </a>
+            <form class="search-form">
+                <input type="text" placeholder="何をお探しですか" name="search">
+                <a href="search_result.html" class="btn">検索</a>
+            </form>
+            <div class="welcome-message">ようこそ、〇〇さん</div>
+        </header>
+        <a href="product_lineup.html" class="back-link">&lt; 戻る</a>
+        <nav class="nav">
+            <ul>
+                <li><a href="mypage.html">マイページ</a></li>
+                <li><a href="sell.html">出品</a></li>
+                <li><a href="contact.html">お問い合わせ</a></li>
+                <li><a href="logout.html">ログアウト</a></li>
+            </ul>
+        </nav>
+        <main class="contact-form">
+            <h1>お問い合わせ</h1>
+            <form>
+                <label for="name">名前:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">メールアドレス:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="subject">件名:</label>
+                <input type="text" id="subject" name="subject" required>
+                <label for="message">お問い合わせ内容:</label>
+                <textarea id="message" name="message" rows="6" required></textarea>
+                <a href="contact_send.html" class="btn">送信</a>
+            </form>
+        </main>
+    </div>
+</body>
+</html>

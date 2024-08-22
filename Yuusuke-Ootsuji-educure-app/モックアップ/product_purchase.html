@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+	
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriConnect. 商品購入画面</title>
+    <link rel="stylesheet" href="css/product_purchase.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="product_lineup.html">
+                <img src="images/logo.png" alt="AgriConnect. ロゴ" class="logo">
+            </a>
+            <form class="search-form">
+                <input type="text" placeholder="何をお探しですか" name="search">
+                <a href="search_result.html" class="btn">検索</a>
+            </form>
+            <div class="welcome-message">ようこそ、〇〇さん</div>
+        </header>
+        <a href="product_detail.html" class="back-link">&lt; 戻る</a>
+        <nav class="nav">
+            <ul>
+                <li><a href="mypage.html">マイページ</a></li>
+                <li><a href="sell.html">出品</a></li>
+                <li><a href="contact.html">お問い合わせ</a></li>
+                <li><a href="logout.html">ログアウト</a></li>
+            </ul>
+        </nav>
+        <main class="product-purchase">
+			<div class="left-side">
+			    <div class="product-detail">
+                    <div class="product-main-image">
+                        <img src="images/tomato.jpg" alt="トマト" id="mainImage">
+                    </div>
+                    <div class="product-info">
+                        <h1 class="product-name">新鮮！朝採れトマト！</h1>
+                        <p class="price">¥1,000</p>
+                    </div>
+                </div>
+                <div class="user-adress">
+				    <form>
+                        <div class="address-selection">
+						    <p>配送先住所</p>
+                            <label>
+                                <input type="radio" name="address" value="registered" checked onclick="toggleAddress()"> 登録住所を使用
+                            </label>
+                            <label>
+                            <input type="radio" name="address" value="new" onclick="toggleAddress()"> 新規住所を入力
+                            </label>
+                        </div>
+                        <div id="registered-address" class="address-container">
+                            <p>東京都新宿区〇〇町1-1-1</p>
+                        </div>
+                        <div id="new-address" class="address-container">
+                            <input type="text" name="new_address" placeholder="新しい住所を入力">
+                        </div>
+                    </form>
+                </div>
+			</div>
+            <div class="payment-detail">
+                <div class="payment-info">
+                    <p>商品代金: <span id="payment-price">¥10,000</span></p>
+                    <p>決済手数料: <span id="payment-fee">¥300</span></p>
+                    <p>支払い金額: <span id="total-amount">¥10,300</span></p>
+                    <a href="purchase_complete.html" class="btn">決済処理に進む</a>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="js/toggle-address.js"></script>
+</body>
+</html>

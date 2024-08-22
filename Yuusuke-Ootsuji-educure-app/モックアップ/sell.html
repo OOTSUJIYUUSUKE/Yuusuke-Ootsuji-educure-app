@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriConnect. 商品出品画面</title>
+    <link rel="stylesheet" href="css/sell.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="product_lineup.html">
+                <img src="images/logo.png" alt="AgriConnect. ロゴ" class="logo">
+            </a>
+            <form class="search-form">
+                <input type="text" placeholder="何をお探しですか" name="search">
+                <a href="search_result.html" class="btn">検索</a>
+            </form>
+            <div class="welcome-message">ようこそ、〇〇さん</div>
+        </header>
+            <a href="product_lineup.html" class="back-link">&lt; 戻る</a>
+        <nav class="nav">
+            <ul>
+                <li><a href="mypage.html">マイページ</a></li>
+                <li><a href="sell.html">出品</a></li>
+                <li><a href="contact.html">お問い合わせ</a></li>
+                <li><a href="logout.html">ログアウト</a></li>
+            </ul>
+        </nav>
+        <main>
+			<h1 class="sell-product">商品の出品</h1>
+			<form action="submit_listing.html" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="product-images">出品画像（最大5枚）</label>
+                    <div id="drop-area">
+                        <p>ここに画像をドラッグ＆ドロップするか、クリックして選択</p>
+                        <input type="file" id="product-images" name="product-images[]" accept="image/*" multiple>
+                        <div id="image-preview"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="product-name">商品名</label>
+                    <input type="text" id="product-name" name="product-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="product-description">商品説明</label>
+                    <textarea id="product-description" name="product-description" rows="5" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="product-price">価格</label>
+                    <input type="number" id="product-price" name="product-price" min="0" required>
+                </div>
+                <div class="button-container">
+                    <a href="sell_submit.html" class="submit-btn">出品する</a>
+                </div>
+            </form>
+        </main>
+    </div>
+    <script src="js/drag_and_drop.js"></script>
+</body>
+</html>
