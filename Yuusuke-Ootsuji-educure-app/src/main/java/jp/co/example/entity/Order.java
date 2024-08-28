@@ -2,6 +2,7 @@ package jp.co.example.entity;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -115,6 +116,30 @@ public class Order {
 	public void setStatus(String status) {
 		this.status = status;
 	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(createdAt, orderId, paymentMethod, price, productId, sessionId, shippingAddress, status,
+				userId);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Order other = (Order) obj;
+		return Objects.equals(createdAt, other.createdAt) && Objects.equals(orderId, other.orderId)
+				&& Objects.equals(paymentMethod, other.paymentMethod) && Objects.equals(price, other.price)
+				&& Objects.equals(productId, other.productId) && Objects.equals(sessionId, other.sessionId)
+				&& Objects.equals(shippingAddress, other.shippingAddress) && Objects.equals(status, other.status)
+				&& Objects.equals(userId, other.userId);
+	}
+	
+	
     
 }
 

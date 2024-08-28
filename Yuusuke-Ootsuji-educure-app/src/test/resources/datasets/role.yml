@@ -1,0 +1,5 @@
+role:
+  - role_id: 1
+    role_name: "管理者"
+  - role_id: 2
+    role_name: "一般"

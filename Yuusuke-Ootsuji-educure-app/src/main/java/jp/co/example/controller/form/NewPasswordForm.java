@@ -11,8 +11,6 @@ public class NewPasswordForm {
 	private String newPassword;
 
 	@NotBlank(message = "パスワードの再入力は必須です")
-	@Pattern(regexp = "^(?=.*[a-zA-Z])(?=.*\\d)(?=.*[!@#$%^&*()_+\\-\\[\\]{}|;:',.<>?/])[A-Za-z\\d!@#$%^&*()_+\\-\\[\\]{}|;:',.<>?/]{8,}$", 
-	         message = "パスワードは8文字以上で、アルファベット、数字、記号を含める必要があります。")
 	private String confirmPassword;
 
 	private String token;

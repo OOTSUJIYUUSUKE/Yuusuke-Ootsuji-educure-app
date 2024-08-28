@@ -25,16 +25,22 @@
                 <div class="form-group">
                     <label for="userId">ユーザーID</label>
                     <form:input path="userId" type="text" id="userId" />
-                </div>
+					<c:if test="${not empty userIdErrorMessage}">
+						<p>${userIdErrorMessage}</p>
+					</c:if>
+				</div>
                 <div class="form-group">
                     <label for="password">パスワード</label>
-                    <form:input path="passwordHash" type="password" id="passwordHash" />
-                </div>
+                    <form:input path="password" type="password" id="password" />
+					<c:if test="${not empty passwordErrorMessage}">
+						<p>${passwordErrorMessage}</p>
+					</c:if>
+				</div>
                 <button type="submit" class="btn">ログイン</button>
             </form:form>
             <div style="color: red;">
-			<c:if test="${not empty errorMessage}">
-				<p>${errorMessage}</p>
+			<c:if test="${not empty authErrorMessage}">
+				<p>${authErrorMessage}</p>
 			</c:if>
 		    </div>
         </main>

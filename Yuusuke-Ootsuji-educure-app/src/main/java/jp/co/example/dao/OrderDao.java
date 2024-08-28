@@ -11,6 +11,7 @@ import jp.co.example.entity.Order;
 
 @Repository
 public interface OrderDao extends JpaRepository<Order, Long> {
+	
 	Order findBySessionId(String sessionId);
 	
     @Query("SELECT o FROM Order o WHERE o.userId = :userId ORDER BY o.createdAt DESC")

@@ -26,11 +26,17 @@
                     <div class="form-group">
                         <form:label path="newPassword">新しいパスワード:</form:label>
                         <form:password path="newPassword" />
-                    </div>
+						<c:if test="${not empty passwordError}">
+							<p style="color: red;">${passwordError}</p>
+						</c:if>
+					</div>
                     <div class="form-group">
                         <form:label path="confirmPassword">再入力パスワード:</form:label>
                         <form:password path="confirmPassword" />
-                    </div>
+						<c:if test="${not empty confirmPasswordError}">
+							<p style="color: red;">${confirmPasswordError}</p>
+						</c:if>
+					</div>
                     <div>
                         <form:hidden path="token" value="${token}" />
                     </div>

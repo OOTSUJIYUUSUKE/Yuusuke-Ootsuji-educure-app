@@ -26,11 +26,17 @@
                 <div class="form-group">
                     <label for="userId">ユーザーID</label>
                     <form:input path="userId" type="text" id="userId" />
-                </div>
+					<c:if test="${not empty userIdError}">
+						<p style="color: red;">${userIdError}</p>
+					</c:if>
+				</div>
                 <div class="form-group">
                     <label for="password">パスワード</label>
-                    <form:input path="passwordHash" type="password" id="passwordHash" />
-                </div>
+                    <form:input path="password" type="password" id="password" />
+					<c:if test="${not empty passwordError}">
+						<p style="color: red;">${passwordError}</p>
+					</c:if>
+				</div>
                 <button type="submit" class="btn">ログイン</button>
             </form:form>
             <div style="color: red;">

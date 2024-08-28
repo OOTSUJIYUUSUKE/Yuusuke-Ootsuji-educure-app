@@ -1,10 +1,18 @@
 package jp.co.example.controller.form;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+
 public class ContactForm {
 	
+	@NotBlank(message = "ユーザー名を入力してください")
 	private String userName;
+	@NotBlank(message = "メールアドレスを入力してください")
+    @Email(message = "無効なメールアドレスです")
 	private String email;
+	@NotBlank(message = "件名を入力してください")
 	private String subject;
+	@NotBlank(message = "お問い合わせ内容を入力してください")
 	private String message;
 
 	public String getUserName() {

@@ -36,20 +36,30 @@
         <main class="contact-form">
             <h1>お問い合わせ</h1>
             <form:form action="${pageContext.request.contextPath}/contact" method="post" modelAttribute="contactForm">
-                <form:label path="userName">名前:</form:label>
-                <form:input type="text" path="userName" id="userName" required="required"/>
-                
-                <form:label path="email">メールアドレス:</form:label>
-                <form:input type="email" path="email" id="email" required="required"/>
-                
-                <form:label path="subject">件名:</form:label>
-                <form:input type="text" path="subject" id="subject" required="required"/>
-                
-                <form:label path="message">お問い合わせ内容:</form:label>
-                <form:textarea path="message" id="message" rows="6" required="required"></form:textarea>
-                
-                <button type="submit" class="btn">送信</button>
-            </form:form>
+				<form:label path="userName">名前:</form:label>
+				<form:input type="text" path="userName" id="userName" />
+				<c:if test="${not empty userNameError}">
+					<span class="error-message">${userNameError}</span>
+				</c:if>
+				<form:label path="email">メールアドレス:</form:label>
+				<form:input type="email" path="email" id="email" />
+				<c:if test="${not empty emailError}">
+					<span class="error-message">${emailError}</span>
+				</c:if>
+				<form:label path="subject">件名:</form:label>
+				<form:input type="text" path="subject" id="subject" />
+				<c:if test="${not empty subjectError}">
+					<span class="error-message">${subjectError}</span>
+				</c:if>
+				<form:label path="message">お問い合わせ内容:</form:label>
+				<form:textarea path="message" id="message" rows="6"></form:textarea>
+				<c:if test="${not empty messageError}">
+					<span class="error-message">${messageError}</span>
+				</c:if>
+				<div>
+				<button type="submit" class="btn">送信</button>
+				</div>
+			</form:form>
         </main>
     </div>
 </body>

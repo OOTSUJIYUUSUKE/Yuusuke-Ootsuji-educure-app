@@ -33,7 +33,6 @@
                 </div>
                 <button type="submit" class="btn">検索</button>
             </form:form>
-
             <table class="user-table">
                 <thead>
                     <tr>

@@ -17,7 +17,7 @@
             <a href="${pageContext.request.contextPath}/admin_dashboard">
                 <img src="images/logo.png" alt="AgriConnect. ロゴ" class="logo">
             </a>
-            <a href="${pageContext.request.contextPath}/admin_user_detail" class="back-link">&lt; 戻る</a>
+            <a href="${pageContext.request.contextPath}/admin_user_detail?userId=${user.userId}" class="back-link">&lt; 戻る</a>
         </header>
         <main>
             <h1 class="title">ユーザー情報</h1>
@@ -32,7 +32,7 @@
 					</div>
 					<div class="form-group">
 						<label for="email">メールアドレス</label>
-						<form:input path="email" id="email" />
+						<form:input type="email" path="email" id="email" />
 					</div>
 					<div class="form-group">
 						<label for="address">住所</label>
@@ -40,11 +40,14 @@
 					</div>
 					<div class="form-group">
 						<label for="telephone">電話番号</label>
-						<form:input path="telephone" id="telephone" />
+						<form:input type="tel" path="telephone" id="telephone" />
 					</div>
 					<div class="form-group">
                         <label for="roleName">権限</label>
-                        <form:input path="roleName" id="roleName" value="${user.roleName}" />
+                        <form:select path="roleName" id="roleName">
+                            <form:option value="一般" label="一般" />
+                            <form:option value="管理者" label="管理者" />
+                        </form:select>
                     </div>
                     <button type="submit" class="btn">変更</button>
                 </form:form>

@@ -12,7 +12,7 @@ public class RoleService {
     @Autowired
     private RoleDao roleDao;
 
-    public Role getRoleById(Long roleId) {
+    public Role getRoleById(int roleId) {
         return roleDao.findById(roleId).orElse(null);
     }
 }

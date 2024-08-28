@@ -1,0 +1,71 @@
+products:
+  - product_id: 1
+    user_id: "tanaka_123"
+    product_name: "トマト"
+    description: "新鮮なトマト"
+    price: 518.76
+    created_at: "2024-08-24 08:44:53"
+    is_sold_out: false
+  - product_id: 2
+    user_id: "tanaka_123"
+    product_name: "キュウリ"
+    description: "瑞々しいキュウリ"
+    price: 64.35
+    created_at: "2024-08-23 07:44:53"
+    is_sold_out: false
+  - product_id: 3
+    user_id: "yamada_901"
+    product_name: "キャベツ"
+    description: "柔らかいキャベツ"
+    price: 894.96
+    created_at: "2024-08-22 06:44:53"
+    is_sold_out: false
+  - product_id: 4
+    user_id: "yamada_901"
+    product_name: "レタス"
+    description: "新鮮なレタス"
+    price: 876.15
+    created_at: "2024-08-21 05:44:53"
+    is_sold_out: true
+  - product_id: 5
+    user_id: "sato_678"
+    product_name: "ナス"
+    description: "ツヤのあるナス"
+    price: 845.46
+    created_at: "2024-08-20 04:44:53"
+    is_sold_out: false
+  - product_id: 6
+    user_id: "suzuki_234"
+    product_name: "ピーマン"
+    description: "苦味の少ないピーマン"
+    price: 645.48
+    created_at: "2024-08-19 03:44:53"
+    is_sold_out: true
+  - product_id: 7
+    user_id: "suzuki_234"
+    product_name: "ゴーヤ"
+    description: "栄養豊富なゴーヤ"
+    price: 396.99
+    created_at: "2024-08-18 02:44:53"
+    is_sold_out: false
+  - product_id: 8
+    user_id: "tanaka_123"
+    product_name: "大根"
+    description: "白くて長い大根"
+    price: 775.17
+    created_at: "2024-08-17 01:44:53"
+    is_sold_out: false
+  - product_id: 9
+    user_id: "sato_678"
+    product_name: "白菜"
+    description: "冬に美味しい白菜"
+    price: 540.54
+    created_at: "2024-08-16 00:44:53"
+    is_sold_out: true
+  - product_id: 10
+    user_id: "yamada_901"
+    product_name: "ホウレンソウ"
+    description: "栄養たっぷりのホウレンソウ"
+    price: 337.59
+    created_at: "2024-08-15 23:44:53"
+    is_sold_out: false

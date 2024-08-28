@@ -1,18 +1,18 @@
 package jp.co.example.entity;
 
+import java.util.Objects;
+
 public class StripeSession {
     private String sessionId;
     private long amount;
     private String productName;
 
-    // コンストラクタ
     public StripeSession(String sessionId, long amount, String productName) {
         this.sessionId = sessionId;
         this.amount = amount;
         this.productName = productName;
     }
 
-    // ゲッターとセッター
     public String getSessionId() {
         return sessionId;
     }
@@ -36,4 +36,22 @@ public class StripeSession {
     public void setProductName(String productName) {
         this.productName = productName;
     }
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(amount, productName, sessionId);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		StripeSession other = (StripeSession) obj;
+		return amount == other.amount && Objects.equals(productName, other.productName)
+				&& Objects.equals(sessionId, other.sessionId);
+	}   
 }

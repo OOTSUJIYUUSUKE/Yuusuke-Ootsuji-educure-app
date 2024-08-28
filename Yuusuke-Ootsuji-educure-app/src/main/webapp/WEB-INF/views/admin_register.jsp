@@ -76,7 +76,7 @@
 				</div>
 				<div class="form-group">
 					<label for="password">パスワード</label>
-					<form:password id="passwordHash" path="passwordHash" />
+					<form:password id="password" path="password" />
 					<c:if test="${not empty passwordError}">
 						<span class="error-message">${passwordError}</span>
 					</c:if>

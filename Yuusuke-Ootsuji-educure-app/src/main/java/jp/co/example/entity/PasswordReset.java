@@ -5,6 +5,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 @Entity
 @Table(name = "password_reset")
@@ -41,4 +42,24 @@ public class PasswordReset {
     public void setExpiresAt(LocalDateTime expiresAt) {
         this.expiresAt = expiresAt;
     }
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(expiresAt, resetToken, userId);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		PasswordReset other = (PasswordReset) obj;
+		return Objects.equals(expiresAt, other.expiresAt) && Objects.equals(resetToken, other.resetToken)
+				&& Objects.equals(userId, other.userId);
+	}
+    
+    
 }

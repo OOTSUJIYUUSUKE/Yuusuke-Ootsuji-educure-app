@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import jp.co.example.entity.Role;
 
 @Repository
-public interface RoleDao extends JpaRepository<Role, Long> {
+public interface RoleDao extends JpaRepository<Role, Integer> {
 }
 

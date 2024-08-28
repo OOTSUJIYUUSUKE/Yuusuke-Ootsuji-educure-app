@@ -1,0 +1,7 @@
+cacheConnection: false
+cacheTableNames: false
+caseInsensitiveStrategy: LOWERCASE
+connectionConfig:
+  url: "jdbc:postgresql://localhost:5432/myapp_test"
+  user: "hogeuser"
+  password: "hoge"

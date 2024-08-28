@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import jakarta.persistence.CollectionTable;
 import jakarta.persistence.Column;
@@ -127,5 +128,26 @@ public class Product {
 
 	public void setSoldOut(boolean isSoldOut) {
 		this.isSoldOut = isSoldOut;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(createdAt, description, imageUrls, isSoldOut, price, productId, productName, user, userId);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Product other = (Product) obj;
+		return Objects.equals(createdAt, other.createdAt) && Objects.equals(description, other.description)
+				&& Objects.equals(imageUrls, other.imageUrls) && isSoldOut == other.isSoldOut
+				&& Objects.equals(price, other.price) && Objects.equals(productId, other.productId)
+				&& Objects.equals(productName, other.productName) && Objects.equals(user, other.user)
+				&& Objects.equals(userId, other.userId);
 	}
 }

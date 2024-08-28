@@ -1,5 +1,7 @@
 package jp.co.example.entity;
 
+import java.util.Objects;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
@@ -16,7 +18,7 @@ public class User {
     private String telephone;
     private String address;
     private String email;
-    private String passwordHash;
+    private String password;
     
     @ManyToOne
     @JoinColumn(name = "role_id", referencedColumnName = "roleId")
@@ -25,13 +27,13 @@ public class User {
     public User() {
     }
 
-    public User(String userId, String userName, String telephone, String address, String email, String passwordHash, Role role) {
+    public User(String userId, String userName, String telephone, String address, String email, String password, Role role) {
         this.userId = userId;
         this.userName = userName;
         this.telephone = telephone;
         this.address = address;
         this.email = email;
-        this.passwordHash = passwordHash;
+        this.password = password;
         this.role = role;
     }
 
@@ -76,12 +78,12 @@ public class User {
 		this.email = email;
 	}
 
-	public String getPasswordHash() {
-		return passwordHash;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setPasswordHash(String passwordHash) {
-		this.passwordHash = passwordHash;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public Role getRole() {
@@ -95,4 +97,24 @@ public class User {
     public String getRoleName() {
         return (role != null) ? role.getRoleName() : null;
     }
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(address, email, password, role, telephone, userId, userName);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		User other = (User) obj;
+		return Objects.equals(address, other.address) && Objects.equals(email, other.email)
+				&& Objects.equals(password, other.password) && Objects.equals(role, other.role)
+				&& Objects.equals(telephone, other.telephone) && Objects.equals(userId, other.userId)
+				&& Objects.equals(userName, other.userName);
+	}
 }

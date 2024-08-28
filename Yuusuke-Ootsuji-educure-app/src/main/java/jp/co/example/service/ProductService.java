@@ -6,7 +6,8 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import jp.co.example.controller.form.ProductForm;
 import jp.co.example.dao.ProductDao;
@@ -15,7 +16,7 @@ import jp.co.example.entity.Product;
 import jp.co.example.entity.ProductImage;
 import jp.co.example.exception.ProductNotFoundException;
 
-@Repository
+@Service
 public class ProductService {
 	
 	@Autowired
@@ -52,10 +53,12 @@ public class ProductService {
         return product.map(Product::getProductName).orElse(null);
     }
 	
-	public void saveProduct(Product product) {
+	@Transactional
+	public void updateStatus(Product product) {
         productDao.save(product);
     }
 	
+	@Transactional
 	public void saveProduct(ProductForm productForm) throws IOException {
         Product product = new Product();
         product.setUserId(productForm.getUserId());

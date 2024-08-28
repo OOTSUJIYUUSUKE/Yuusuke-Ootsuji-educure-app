@@ -6,42 +6,41 @@ import jakarta.validation.constraints.Pattern;
 
 public class RegisterForm {
 	
-	@NotBlank(message = "ユーザーIDは必須です")
+	@NotBlank(message = "ユーザーIDを入力してください")
     private String userId;
 
-    @NotBlank(message = "ユーザー名は必須です")
+    @NotBlank(message = "ユーザー名を入力してください")
     private String userName;
 
-    @NotBlank(message = "メールアドレスは必須です")
+    @NotBlank(message = "メールアドレスを入力してください")
     @Email(message = "無効なメールアドレスです")
     private String email;
 
-    @NotBlank(message = "住所は必須です")
+    @NotBlank(message = "住所を入力してください")
     private String address;
 
-    @NotBlank(message = "電話番号は必須です")
+    @NotBlank(message = "電話番号を入力してください")
+    @Pattern(regexp = "^[0-9]{10,11}$", message = "電話番号は10桁または11桁の数字で入力してください")
     private String telephone;
 
-    @NotBlank(message = "パスワードは必須です")
+    @NotBlank(message = "パスワードを入力してください")
     @Pattern(regexp = "^(?=.*[a-zA-Z])(?=.*\\d)(?=.*[!@#$%^&*()_+\\-\\[\\]{}|;:',.<>?/])[A-Za-z\\d!@#$%^&*()_+\\-\\[\\]{}|;:',.<>?/]{8,}$", 
              message = "パスワードは8文字以上で、アルファベット、数字、記号を含める必要があります。")
-    private String passwordHash;
+    private String password;
 
-    @NotBlank(message = "パスワードの再入力は必須です")
-    @Pattern(regexp = "^(?=.*[a-zA-Z])(?=.*\\d)(?=.*[!@#$%^&*()_+\\-\\[\\]{}|;:',.<>?/])[A-Za-z\\d!@#$%^&*()_+\\-\\[\\]{}|;:',.<>?/]{8,}$", 
-             message = "パスワードは8文字以上で、アルファベット、数字、記号を含める必要があります。")
+    @NotBlank(message = "パスワードを入力してください")
     private String confirmPassword;
 
 	public RegisterForm() {
 	}
 
-	public RegisterForm(String userId, String userName, String email, String address, String telephone, String passwordHash, String confirmPassword) {
+	public RegisterForm(String userId, String userName, String email, String address, String telephone, String password, String confirmPassword) {
 		this.userId = userId;
 		this.userName = userName;
 		this.email = email;
 		this.address = address;
 		this.telephone = telephone;
-		this.passwordHash = passwordHash;
+		this.password = password;
 		this.confirmPassword = confirmPassword;
 	}
 
@@ -85,12 +84,12 @@ public class RegisterForm {
 		this.telephone = telephone;
 	}
 
-	public String getPasswordHash() {
-		return passwordHash;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setPasswordHash(String passwordHash) {
-		this.passwordHash = passwordHash;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public String getConfirmPassword() {
@@ -100,6 +99,4 @@ public class RegisterForm {
 	public void setConfirmPassword(String confirmPassword) {
 		this.confirmPassword = confirmPassword;
 	}
-	
-    
 }

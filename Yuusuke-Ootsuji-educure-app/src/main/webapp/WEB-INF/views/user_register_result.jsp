@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>    
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -17,8 +18,11 @@
             </a>
         </header>
        <main>
-           <p>ユーザーを新規登録しました。</p>
-           <a href="${pageContext.request.contextPath}/product_lineup" class="btn">商品を見に行く</a>
+			<p>ユーザーを新規登録しました。</p>
+			<c:if test="${not empty emailError}">
+				<div class="error-message">${emailError}</div>
+			</c:if>
+			<a href="${pageContext.request.contextPath}/product_lineup" class="btn">商品を見に行く</a>
        </main>
     </div>
 </body>

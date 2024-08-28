@@ -41,20 +41,16 @@ public class PasswordResetService {
     public String createPasswordResetToken(String email) {
         String token = UUID.randomUUID().toString();
         LocalDateTime expiresAt = LocalDateTime.now().plusMinutes(10);
-
         Optional<User> userOptional = userDao.findByEmail(email);
         if (!userOptional.isPresent()) {
             throw new RuntimeException("User not found");
         }
         String userId = userOptional.get().getUserId();
-
         PasswordReset passwordReset = new PasswordReset();
         passwordReset.setResetToken(token);
         passwordReset.setUserId(userId);
         passwordReset.setExpiresAt(expiresAt);
-
         saveResetToken(passwordReset);
-
         return token;
     }
 
@@ -65,7 +61,6 @@ public class PasswordResetService {
 
     public void sendPasswordResetEmail(String to, String resetToken) {
         String resetLink = resetLinkUrl + "?token=" + resetToken;
-
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo(to);
         message.setSubject("パスワードリセットのご案内");
@@ -92,16 +87,13 @@ public class PasswordResetService {
     @Transactional
     public void updatePassword(String token, String newPassword) {
         Optional<User> userOptional = getUserByResetToken(token);
-
         if (userOptional.isPresent()) {
             User user = userOptional.get();
-            user.setPasswordHash(passwordEncoder.encode(newPassword));
+            user.setPassword(passwordEncoder.encode(newPassword));
             userDao.save(user);
-
             passwordResetDao.deleteByResetToken(token);
         } else {
             throw new RuntimeException("Invalid token");
         }
     }
-
 }

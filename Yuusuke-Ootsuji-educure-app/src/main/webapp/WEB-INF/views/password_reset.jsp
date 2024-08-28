@@ -21,14 +21,17 @@
         <main>
             <h1 class="password-reset">パスワードリセット</h1>
             <p>パスワードのリセットリンクを送信するメールアドレスを入力してください。</p>
-            <c:if test="${not empty errorMessage}">
-                <div class="error-message">${errorMessage}</div>
-            </c:if>
             <form:form action="${pageContext.request.contextPath}/password_reset" method="post" modelAttribute="passwordResetForm" class="reset-form">
                 <div class="form-group">
                     <form:label path="email">メールアドレス</form:label>
-                    <form:input path="email" id="email" required="required"/>
-                </div>
+                    <form:input path="email" id="email"/>
+                    <c:if test="${not empty emailError}">
+						<div class="error-message">${emailError}</span>
+					</c:if>
+					<c:if test="${not empty errorMessage}">
+						<div class="error-message">${errorMessage}</div>
+					</c:if>
+				</div>
                 <button type="submit" class="btn">送信</button>
             </form:form>
         </main>

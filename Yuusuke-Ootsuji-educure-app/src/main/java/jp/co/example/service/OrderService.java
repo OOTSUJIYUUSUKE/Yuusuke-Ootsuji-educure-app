@@ -2,6 +2,7 @@ package jp.co.example.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import jp.co.example.dao.OrderDao;
 import jp.co.example.dao.ProductDao;
@@ -19,19 +20,21 @@ public class OrderService {
     @Autowired
     private ProductDao productDao;
 
+    @Transactional
     public Order saveOrder(Order order) {
         order.setCreatedAt(LocalDateTime.now());
         return orderDao.save(order);
     }
-
+    
     public List<Order> getAllOrders() {
         return orderDao.findAll();
     }
-
+    
     public Order getOrderById(Long orderId) {
         return orderDao.findById(orderId).orElse(null);
     }
-
+    
+    @Transactional
     public void deleteOrder(Long orderId) {
         orderDao.deleteById(orderId);
     }

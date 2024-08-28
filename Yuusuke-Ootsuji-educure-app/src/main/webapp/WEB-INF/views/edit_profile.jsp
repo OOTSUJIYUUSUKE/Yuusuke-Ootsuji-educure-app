@@ -26,26 +26,43 @@
         <main>
             <h1 class="title">プロフィール変更</h1>
             <div class="form-container">
-                <form:form method="post" action="${pageContext.request.contextPath}/edit_profile" modelAttribute="user" class="profile-form">
+                <form:form method="post" action="${pageContext.request.contextPath}/edit_profile" modelAttribute="userEditForm" class="profile-form">
 					<div class="form-group">
 						<label for="userId">ユーザーID <span class="note">※IDは変更できません</span></label>
 						<form:input path="userId" id="userId" readonly="true"/>
 					</div>
 					<div class="form-group">
 						<label for="userName">ユーザー名</label>
-						<form:input path="userName" id="userName" />
+						<form:input path="userName" id="userName"/>
+						<c:if test="${not empty userNameError}">
+							<span class="error-message">${userNameError}</span>
+						</c:if>
 					</div>
 					<div class="form-group">
 						<label for="email">メールアドレス</label>
-						<form:input path="email" id="email" />
+						<form:input path="email" id="email"/>
+						<c:if test="${not empty emailError}">
+							<span class="error-message">${emailError}</span>
+						</c:if>
 					</div>
 					<div class="form-group">
 						<label for="address">住所</label>
-						<form:input path="address" id="address" />
+						<form:input path="address" id="address"/>
+						<c:if test="${not empty addressError}">
+							<span class="error-message">${addressError}</span>
+						</c:if>
 					</div>
 					<div class="form-group">
 						<label for="telephone">電話番号</label>
-						<form:input path="telephone" id="telephone" />
+						<form:input path="telephone" id="telephone"/>
+						<c:choose>
+							<c:when test="${not empty telephoneExistsError}">
+								<span class="error-message">${telephoneExistsError}</span>
+							</c:when>
+							<c:when test="${not empty telephoneError}">
+								<span class="error-message">${telephoneError}</span>
+							</c:when>
+						</c:choose>
 					</div>
                     <button type="submit" class="btn">変更</button>
                 </form:form>

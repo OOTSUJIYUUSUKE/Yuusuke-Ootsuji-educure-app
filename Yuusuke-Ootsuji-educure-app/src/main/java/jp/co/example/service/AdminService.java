@@ -45,7 +45,7 @@ public class AdminService {
             return null;
         }
         
-        if (passwordEncoder.matches(password, user.getPasswordHash())) {
+        if (passwordEncoder.matches(password, user.getPassword())) {
             return user;
         } else {
             return null;
@@ -64,6 +64,7 @@ public class AdminService {
 		return adminUserDao.findByUserId(userId);
 	}
 	
+	@Transactional
 	public void updateUser(User user) {
         User existingUser = adminUserDao.findByUserId(user.getUserId());
         if (existingUser != null) {
@@ -135,8 +136,9 @@ public class AdminService {
         return adminDao.existsByTelephone(telephone);
     }
     
+    @Transactional
     public void registerUser(User user) {
-        user.setPasswordHash(passwordEncoder.encode(user.getPasswordHash()));
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
         adminDao.save(user);
     }
 }

@@ -31,6 +31,10 @@
 					<form:input path="userName" id="userName" readonly="true"/>
 				</div>
 				<div class="form-group">
+					<label for="subject">件名</label>
+					<form:input path="subject" id="subject" readonly="true"/>
+				</div>
+				<div class="form-group">
 					<label for="message">問い合わせ内容詳細</label>
 					<form:textarea path="message" id="message" rows="4" readonly="true"></form:textarea>
 				</div>

@@ -1,0 +1,29 @@
+orders:
+  - user_id: "tanaka_123"
+    session_id: "session12345"
+    product_id: 1
+    price: 500.00
+    payment_method: "stripe"
+    shipping_address: "大阪府大阪市1-1-1"
+    created_at: "2024-08-24 08:44:53" 
+  - user_id: "sato_678"
+    session_id: "session67890"
+    product_id: 2
+    price: 1000.00
+    payment_method: "stripe"
+    shipping_address: "東京都渋谷区2-2-2"
+    created_at: "2024-08-23 07:44:53"  
+  - user_id: "yamada_901"
+    session_id: "session90123"
+    product_id: 3
+    price: 1500.00
+    payment_method: "stripe"
+    shipping_address: "神奈川県横浜市3-3-3"
+    created_at: "2024-08-22 06:44:53"  
+  - user_id: "suzuki_234"
+    session_id: "session23456"
+    product_id: 4
+    price: 2000.00
+    payment_method: "stripe"
+    shipping_address: "愛知県名古屋市4-4-4"
+    created_at: "2024-08-21 05:44:53"

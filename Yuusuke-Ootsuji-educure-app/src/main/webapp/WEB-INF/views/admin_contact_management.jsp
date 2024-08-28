@@ -38,6 +38,9 @@
 				</div>
                 <button type="submit" class="btn">検索</button>
             </form:form>
+            <c:if test="${not empty errorMessage}">
+				<p>${errorMessage}</p>
+			</c:if>
             <table class="support-table">
                 <thead>
                     <tr>
